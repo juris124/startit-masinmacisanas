@@ -5,7 +5,7 @@ import seaborn as sb # vizualizācija
 
 # vizualizaciju pamata konfigurācija
 sb.set_style('whitegrid') # plot style
-plt.rcParams['figure.figsize'] = (15, 10) # plot size
+plt.rcParams['figure.figsize'] = (5, 5) # plot size
 
 
 # Karstuma karte (korelācija)
@@ -54,13 +54,15 @@ datne1 = 'dati/auto_simple.csv'
 datne2 = 'dati/auto_imports.csv'
 datne3 = 'dati/auto_imports_degviela.csv'
 datne4 = 'dati/auto_imports_tips.csv'
+datne6 = 'dati/ss_auto.csv'
 
-#karstuma_karte(datne4, True)
+#karstuma_karte(datne6, True)
 #karstuma_karte(datne3, True)
-#sadalijuma_grafiks(datne2, "price")
+#sadalijuma_grafiks(datne6, "gads")
 #sadalijuma_grafiks(datne1, "CO2")
 # izkliedes_grafiks(datne1, 'Volume', 'CO2')
 #izkliedes_grafiks(datne1, 'Weight', 'CO2')
-izkliedes_grafiks(datne4, 'price', 'make')
-# izkliedes_grafiks(datne2, 'price', 'make')
+#izkliedes_grafiks(datne4, 'price', 'make')
+izkliedes_grafiks(datne6, 'cena', 'razotajs')
+
 

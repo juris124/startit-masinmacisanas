@@ -49,8 +49,8 @@ def parverst_kolonnu(df, kolonna):
 
 def modela_kvalitate(y_test, resultats):
     # Kvalitate virs 0.6 ir OK
-    print(cl('Explained Variance Score: {}'.format(evs(y_test, resultats)), attrs = ['bold']))
-    print(cl('R-Squared: {}'.format(r2(y_test, resultats)), attrs = ['bold']))
+    print(cl('Explained Variance Score (dispersija): {}'.format(evs(y_test, resultats)), attrs = ['bold']))
+    print(cl('R-Squared (kvadratiska novirze): {}'.format(r2(y_test, resultats)), attrs = ['bold']))
 
 
 def saglabat_modeli(datne, modelis):
@@ -79,50 +79,65 @@ def prognozejam_rezultatu(modelis, dati):
     return rezultats
 
 
-datne1 = 'dati/auto_simple.csv'
-kol_x1 = ['Volume','Weight']
-kol_y1 = 'CO2'
+def main():
+    datne1 = 'dati/auto_simple.csv'
+    kol_x1 = ['Volume','Weight']
+    kol_y1 = 'CO2'
 
-datne2 = 'dati/auto_imports.csv'
-kol_x2 = ['wheel-base','length','engine-size','city-mpg']
-kol_y2 = 'price'
+    datne2 = 'dati/auto_imports_degviela.csv'
+    # kol_x2 = ['wheel-base','length','engine-size','city-mpg']
+    kol_x2 = ['curb-weight','horsepower','engine-size','highway-mpg']
+    kol_y2 = 'price'
 
-# Sagatavojam datus no datnes
-#X_train, X_test, y_train, y_test = sagatavot_datus(datne1, kol_x1, kol_y1)
-X_train, X_test, y_train, y_test = sagatavot_datus(datne2, kol_x2, kol_y2)
+    datne3 = 'dati/ss_auto.csv'
+    kol_x3 = ['gads','tilpums','nobraukums']
+    kol_y3 = 'cena'    
+
+    # Sagatavojam datus no datnes
+    X_train, X_test, y_train, y_test = sagatavot_datus(datne3, kol_x3, kol_y3)
 
 
-# vienkārša lineārā regresija
-modelis = LinearRegression()
-# Citi algoritmi ko var lietot:
-# # 2. Ridge
-# modelis = Ridge(alpha = 0.5)
-# # 3. Lasso
-# modelis = Lasso(alpha = 0.01)
-# # 4. Bayesian
-# modelis = BayesianRidge()
-# # 5. ElasticNet
-# modelis = ElasticNet(alpha = 0.01)
-# Labāks algoritms
-#modelis = ensemble.GradientBoostingRegressor(n_estimators = 400, max_depth = 5, min_samples_split = 2, learning_rate = 0.1, loss = 'ls')
+    # vienkārša lineārā regresija
+    # modelis = LinearRegression()
+    # Citi algoritmi ko var lietot:
+    # # 2. Ridge
+    # modelis = Ridge(alpha = 0.5)
+    # # 3. Lasso
+    # modelis = Lasso(alpha = 0.01)
+    # # 4. Bayesian
+    # modelis = BayesianRidge()
+    # # 5. ElasticNet
+    # modelis = ElasticNet(alpha = 0.01)
+    # Labāks algoritms
+    modelis = ensemble.GradientBoostingRegressor(n_estimators = 400, max_depth = 5, min_samples_split = 2, learning_rate = 0.1, loss = 'ls')
 
-modelis, rezultats = trenet_modeli(modelis, X_train, y_train, X_test)
-# # Ja gribam saglabāt modeli datnē
-modelis, rezultats = trenet_modeli(modelis, X_train, y_train, X_test, "modelis.pickle")
-modela_kvalitate(y_test, rezultats)
+    #modelis, rezultats = trenet_modeli(modelis, X_train, y_train, X_test)
+    # # Ja gribam saglabāt modeli datnē
+    modelis, rezultats = trenet_modeli(modelis, X_train, y_train, X_test, "ss-modelis.pickle")
+    modela_kvalitate(y_test, rezultats)
 
-# Lietojam modeli, lai prognozetu rezultātu
-dati1 = [900,865]
-dati1_rez = 90
-dati2 = [99.80,176.60,109,24]
-dati2_rez = 13950
+    # Lietojam modeli, lai prognozetu rezultātu
+    dati1 = [900,865]
+    dati1_rez = 90
 
-prognoze = prognozejam_rezultatu(modelis, [dati2])
-print(prognoze, dati2_rez)
+    # Prognozejot varam dot 2dimensiju masivu
+    dati2 = [[2337,102,109,30]]
+    dati2_rez = 13950
 
-print("Ielādējam modeli no datnes")
-modelis2 = ieladet_modeli("modelis.pickle")
-rezultats2 = modelis2.predict(X_test)
-modela_kvalitate(y_test, rezultats2)
-prognoze = prognozejam_rezultatu(modelis2, [dati2])
-print(prognoze, dati2_rez)
+    # Volkswagen,Passat (B8),Volkswagen Passat (B8),2015,Dīzelis,2.0,176,12200
+    dati3 = [[2015, 2.0, 176]]
+    dati3_rez = 12200
+
+    prognoze = prognozejam_rezultatu(modelis, dati3)
+    print(prognoze, dati3_rez)
+
+    # print("Ielādējam modeli no datnes")
+    # modelis2 = ieladet_modeli("modelis.pickle")
+    # rezultats2 = modelis2.predict(X_test)
+    # modela_kvalitate(y_test, rezultats2)
+    # prognoze = prognozejam_rezultatu(modelis2, [dati1])
+    # print(prognoze, dati1_rez)
+
+
+if __name__ == "__main__":
+    main()

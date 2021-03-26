@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 import csv
 import time
 
-URL = 'https://www.ss.lv/lv/transport/cars/today-5/filter/'
+URL = 'https://www.ss.lv/lv/transport/cars/today-5/sell/'
 LAPAS = 'lapas/'
 DATI = 'dati/'
 
@@ -47,15 +47,25 @@ def info(datne):
         auto["bilde"] = lauki[1].find("img")["src"]
         auto["apraksts"] = lauki[2].find("a").text.replace("\n", " ")
 
-        lauki[3].br.replace_with("!")
-
-        auto["marka"] = lauki[3].text.replace("!", " ")
-        auto["razotajs"] = lauki[3].text.split("!")[0]
-        auto["modelis"] = lauki[3].text.split("!")[1]
+        # dažāds formatējums
+        if lauki[3].b:
+            if lauki[3].b.br:
+                lauki[3].b.br.replace_with('!')
+            auto["marka"] = lauki[3].b.text
+        else:
+            if lauki[3].br:
+                lauki[3].br.replace_with('!')
+            auto["marka"] = lauki[3].text
+        auto["razotajs"] = auto["marka"].split("!")[0]
+        auto["marka"] = auto["marka"].replace("!", " ")
+                
+        #auto["marka"] = lauki[3].text.replace("!", " ")
+        #auto["razotajs"] = lauki[3].text.split("!")[0]
+        #auto["modelis"] = lauki[3].text.split("!")[1]
+        
         auto["gads"]  = lauki[4].text
 
-        tilpums = lauki[5].text        
-        
+        tilpums = lauki[5].text                
         if tilpums[-1] == "D":
             auto["dzinejs"] = "Dīzelis"
             auto["tilpums"] = tilpums[:-1]
@@ -67,14 +77,14 @@ def info(datne):
             auto["tilpums"] = tilpums
 
         if not lauki[6].text == "-":
-            auto["nobraukums"] = lauki[6].text.replace(" tūkst.", " 000 km")
+            auto["nobraukums"] = lauki[6].text.replace(" tūkst.", "")
         else:
             continue
             # šis kā alternatīva
             auto["nobraukums"] = ""
 
 
-        auto["cena"] = lauki[7].text.replace(" €", "").replace(",", "")
+        auto["cena"] = lauki[7].text.replace("  €", "").replace(",", "")
 
         #cena = lauki[7].text.replace(" €", "").replace(",", "")
         #print(cena)
@@ -88,8 +98,8 @@ def info(datne):
         #modelis = lauki[3].text.split("!")[1]
         
 
-        print(auto)
-        print("=================================================================")
+        #print(auto)
+        #print("=================================================================")
         dati.append(auto)
         #print(dati)
     return dati
@@ -108,14 +118,14 @@ def info(datne):
 
 def saglaba_datus(dati):
     with open(DATI + 'ss_auto.csv', 'w', encoding='UTF-8', newline="") as f:
-        kolonu_nosaukumi = ['razotajs', 'modelis', 'marka', 'gads', 'dzinejs', 'tilpums', 'nobraukums', 'cena', 'apraksts', 'bilde', 'saite']
+        kolonu_nosaukumi = ['razotajs', 'marka', 'gads', 'dzinejs', 'tilpums', 'nobraukums', 'cena', 'apraksts', 'bilde', 'saite']
         w = csv.DictWriter(f, fieldnames = kolonu_nosaukumi)
         w.writeheader()
         for auto in dati:
             w.writerow(auto)
 
 d1 = info(LAPAS + "01_pirma_lapa.html")
-print(d1)
+#print(d1)
 saglaba_datus(d1)
 
 
@@ -123,15 +133,15 @@ saglaba_datus(d1)
 def atvelkam_lapas(cik):
     datne = "{}page1.html".format(LAPAS)
     saglaba(URL, datne)
-    time.sleep(2)
+    time.sleep(1)
 
     for i in range(2, cik + 1):
         url = "{}page{}.html".format(URL, i)
         datne = "{}page{}.html".format(LAPAS, i)
-        print(url)        
-        print(datne)
+        #print(url)        
+        #print(datne)
         saglaba(url, datne)
-        time.sleep(5)
+        time.sleep(1)
 
 # sho jaapalaizj tikai 1 reizi, lai nevelk !!!!!!!!!!!!!!
 #atvelkam_lapas(50)
@@ -146,4 +156,7 @@ def izvelkam_datus(cik):
         datnes_dati = info(datne)
         visi_dati += datnes_dati
     saglaba_datus(visi_dati)
+
 izvelkam_datus(50)
+
+# git add .; git commit ... ; git push
