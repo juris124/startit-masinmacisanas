@@ -1,0 +1,74 @@
+12:47:43 From  Indra Kažoka  to  Everyone : From Una to Everyone:  12:08 PMsana ir kvadratins packages, kuf pandas pareizo versiju panemNemāku atrast šo Packages kvadrātiņu. Gribētos iemācīties to darīt repl.itā, jo skolēniem tā šķiet vieglāk
+12:48:44 From  Inta  to  Everyone : pārinstalēju python, bet tik un tā rāda to pašu kļūdu
+12:50:30 From  Juris Erts  to  Start(it) Fonds(Direct Message) : Sveiki! Varētu, lūdzu, man privāti nodublēt čata daļu kas man jādara lai strādātu tālāk. Paldies
+12:51:32 From  Daina Kurme  to  Everyone : man nerāda grafiku vizuāli
+12:51:53 From  Marta Britāla  to  Everyone : Pagaidi brīdi, varbūt atvērsies.
+12:52:56 From  Marta Britāla  to  Everyone : No sākuma man šķita, ka nerādās, mēģināju vairākas reizes palaist, pēc brīža vērās vairāki grafiki vaļā.
+12:54:03 From  Start(it) Fonds  to  Juris Erts(Direct Message) : šī ir tā komanda, ar kuru jāuzinstalē bibliotēkas: pip install -r requirements.txt
+12:54:24 From  Marta Britāla  to  Everyone : Es visu laiku ķeksējos, bet pēc laika izslēdzas ķeksītis.
+12:55:31 From  Juris Erts  to  Start(it) Fonds(Direct Message) : es neatrodu to saiti uz github
+12:55:43 From  Start(it) Fonds  to  Juris Erts(Direct Message) : https://github.com/startitfonds/startit-masinmacisanas
+12:56:37 From  Marta Britāla  to  Everyone : Tiem zaļajiem
+13:26:02 From  Gundega Dekena  to  Everyone : print(cl("\n\nInformācija par datni " + datne, 'green', attrs = ['bold']))
+13:28:29 From  Ieva Ramba  to  Everyone : Sarkana arī ir :)
+13:28:45 From  Marta Britāla  to  Everyone : Available text colors:red, green, yellow, blue, magenta, cyan, white.Available text highlights:on_red, on_green, on_yellow, on_blue, on_magenta, on_cyan, on_white.
+13:28:47 From  Juris Erts  to  Start(it) Fonds(Direct Message) : iet
+13:28:51 From  Laila Zudāne  to  Everyone : Man arī sanāca.
+13:29:01 From  Marta Britāla  to  Everyone : Available attributes:bold, dark, underline, blink, reverse, concealed.
+13:29:03 From  Start(it) Fonds  to  Juris Erts(Direct Message) : Super! :)
+13:29:04 From  Juris Erts  to  Everyone : iet arī uz windows
+13:40:31 From  Gundega Dekena  to  Everyone : attribute ‘blink’ nestrādā :(
+13:41:53 From  Gundega Dekena  to  Everyone : ‘reverse’ labi izceļas
+13:49:34 From  Gundega Dekena  to  Everyone : es tā izlasīju :P
+14:04:07 From  Gundega Dekena  to  Everyone : https://medium.com/codex/house-price-prediction-with-machine-learning-in-python-cf9df744f7ff
+14:04:22 From  Gundega Dekena  to  Everyone : iedvesma
+14:04:50 From  Gundega Dekena  to  Everyone : otra iedevsma - https://towardsdatascience.com/create-a-model-to-predict-house-prices-using-python-d34fe8fad88f
+14:06:16 From  Juris Erts  to  Everyone : https://towardsdatascience.com/predicting-bitcoin-prices-with-deep-learning-438bc3cf9a6f
+14:07:42 From  Sandra Trosina  to  Everyone : Elementārākajā veidā varētu sākt no numpy, matplotlib un pandas izpētes, bez šīm lietām AI būs ārkārtīgi sarežģīti izprast arī uz gataviem piemēriem.
+14:09:02 From  Juris Erts  to  Everyone : pēc pamatu mācīšanās būtu jāmāca lasīt gatavos kodus un tad iespējams varētu ķerties pie AI
+14:11:24 From  Start(it) Fonds  to  Everyone : Esam atpakaļ 14:30
+14:26:14 From  Inta  to  Everyone : Vai var lūgt skaidrojumu kļūdai:
+14:26:17 From  Inta  to  Everyone : FileNotFoundError: [Errno 2] No such file or directory: 'dati/auto_simple.csv'
+14:27:17 From  Gundega Dekena  to  Everyone : nevar atrast to failu
+14:27:48 From  Inta  to  Everyone : un kāds tam iemesla, ja tas fails ir tur kur viņam jābūt?
+14:28:05 From  Gundega Dekena  to  Everyone : kaa tiek laists pats scripts?
+14:28:13 From  Gundega Dekena  to  Everyone : tas *.py?
+14:28:21 From  Gundega Dekena  to  Everyone : ar kādu komandu?
+14:28:23 From  Sandra Trosina  to  Everyone : Manā pieredzē - direktorijas nosaukumā ir latviešu valodas burti. Pārsauciet direktoriju/failu, lai palaistu.
+14:29:35 From  Inta  to  Everyone : nav neviena garumzīme
+14:29:48 From  Sandra Trosina  to  Everyone : Direktorijā arī nē?
+14:36:30 From  Juris Erts  to  Everyone : rudenī skolēnu klasē kad instalējām Python un VSCode lielākās un vienīgās problēmas bija ar failu/mapju garumzīmēm, atstarpēm un visa faila ceļa garumu ...
+14:46:52 From  Arvīds Prančs  to  Everyone : pagaid\am nav
+14:51:23 From  Start(it) Fonds  to  Everyone : Līdz 15:05 pildām Māra doto uzdevumu. Ja ir jautājumi, dodiet ziņu.
+14:57:19 From  Sandra Trosina  to  Everyone : Nomainot lineara.regresija.py 91.rindā visu uz datne2 datiem, kādam vēl izmet kļūdu ValueError uz funkciju prognozejam_rezultatu?
+14:57:52 From  Marta Britāla  to  Everyone : 119.rindā nomainīji?
+14:58:09 From  Sandra Trosina  to  Everyone : Nop, paldies)
+14:58:47 From  Marta Britāla  to  Everyone : Es dabūju 94% R-squared :)
+14:58:52 From  Māris Danne  to  Everyone : Wow...
+14:58:59 From  Māris Danne  to  Everyone : Piefiksē parametrus :)
+14:59:12 From  Marta Britāla  to  Everyone : 93.7% nu labi...
+15:00:07 From  Marta Britāla  to  Everyone : tur gan tas labais modelis jālieto...
+15:05:55 From  Daina Kurme  to  Everyone : lineāro 
+15:06:07 From  Guntis Romanovskis  to  Everyone : Itkā viss notiek...
+15:06:14 From  Daina Kurme  to  Everyone : tiku galā palika vizuālais
+15:06:28 From  Gundega Dekena  to  Everyone : Ja kādam vel patīk karstuma kartes, tad iesaku pamēgināt ‘twilight_shifted’ krāsu ‘magma’ vietā
+15:09:57 From  Guntis Romanovskis  to  Everyone : Labākais aptuveni 83
+15:13:55 From  Gundega Dekena  to  Everyone : https://matplotlib.org/stable/tutorials/colors/colormaps.html
+15:20:36 From  Vineta LV1G  to  Everyone : Kā varēja dabūt krāsainas kolonnas
+15:20:53 From  Gundega Dekena  to  Everyone : pieinstalē Pluginu VSCode
+15:21:35 From  Gundega Dekena  to  Everyone : kreisajā pusē  tur kur tie kvadrātiņi, uzspiež un sameklē RainbowCSV
+15:21:40 From  Gundega Dekena  to  Everyone : un Install
+15:45:09 From  Tatjana Strigaļova  to  Everyone : body-style:               hardtop, wagon, sedan, hatchback, convertible.
+15:52:23 From  Una  to  Everyone : body style vs degvielas paterins
+15:53:48 From  Una  to  Everyone : svars un paterins? jo pec realas dzives jabut
+16:08:44 From  Juris Erts  to  Everyone : repozitārijā ir csv, names un vēl arī data. kas ir data?
+16:08:46 From  Sandra Trosina  to  Everyone : LV vēl mīl komata vietā izmantot semikolu - negaidītās vietās tad izlec problēmas -_-
+16:12:38 From  Gundega Dekena  to  Everyone : Juri, nesapratu jautajumu?
+16:13:27 From  Gundega Dekena  to  Everyone : ā, sapratu
+16:14:06 From  Gundega Dekena  to  Everyone : Juri: man liekas *.data un *.csv ir tur tas pats
+16:15:12 From  Gundega Dekena  to  Everyone : teorētiski varētu būt, ka *.data ir kaut kāds binārs vai specials formāts, bet *.csv jau konvertēts par paarst csv
+16:16:51 From  Guntis Romanovskis  to  Everyone : Nav iebildumu.
+16:18:56 From  Vineta LV1G  to  Everyone : Paldies! Jauku vakaru
+16:19:07 From  Sandra Trosina  to  Everyone : Uz redzēšanos!
+16:19:08 From  Juris Erts  to  Everyone : Paldeis!
+16:01:20 From  Gundega Dekena  to  Everyone : https://github.com/jbrownlee/Datasets/16:05:59 From  Laila Zudāne  to  Everyone : https://www.csb.gov.lv/lv/statistika no šejienes nevar ņemt?16:08:52 From  Gundega Dekena  to  Everyone : https://ourworldindata.org/16:13:32 From  Arvīds Prančs  to  Everyone : https://data.gov.lv/lv

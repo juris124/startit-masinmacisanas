@@ -3,7 +3,8 @@ from termcolor import colored as cl # teksta izvade
 
 
 def info(datne):
-    print(cl("\n\nInformācija par datni " + datne, attrs = ['bold']))
+    #print(cl("\n\nInformācija par datni " + datne, attrs = ['bold']))
+    print(cl("\n\nInformācija par datni " + datne, 'red', attrs = ['bold']))
     # # importējam datus
     # # df is saīsinajums no Data Frame, 
     # # Pandas bibliotēkas pamata datu struktūras
@@ -33,4 +34,4 @@ datne1 = 'dati/auto_simple.csv'
 datne2 = 'dati/auto_imports.csv'
 
 # parādām informāciju par datnē esošajiem datiem
-info(datne1)
+info(datne2)

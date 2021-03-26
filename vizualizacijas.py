@@ -11,7 +11,8 @@ plt.rcParams['figure.figsize'] = (15, 10) # plot size
 # Karstuma karte (korelācija)
 def karstuma_karte(datne, saglabat=False):
     df = pd.read_csv(datne)
-    sb.heatmap(df.corr(), annot = True, cmap = 'magma')
+    #sb.heatmap(df.corr(), annot = True, cmap = 'magma')
+    sb.heatmap(df.corr(), annot = True, cmap = 'coolwarm')
     if saglabat:
         # izveidojam datnes nosaukumu bez mapes un faila tipe
         datnes_vards = datne[datne.find("/"):datne.find(".")]
@@ -51,10 +52,15 @@ def izkliedes_grafiks(datne, x, y, saglabat=False):
 
 datne1 = 'dati/auto_simple.csv'
 datne2 = 'dati/auto_imports.csv'
+datne3 = 'dati/auto_imports_degviela.csv'
+datne4 = 'dati/auto_imports_tips.csv'
 
-karstuma_karte(datne1, True)
-# sadalijuma_grafiks(datne2, "price")
+#karstuma_karte(datne4, True)
+#karstuma_karte(datne3, True)
+#sadalijuma_grafiks(datne2, "price")
+#sadalijuma_grafiks(datne1, "CO2")
 # izkliedes_grafiks(datne1, 'Volume', 'CO2')
-# izkliedes_grafiks(datne1, 'Weight', 'CO2')
-# izkliedes_grafiks(datne1, 'Volume', 'Weight')
+#izkliedes_grafiks(datne1, 'Weight', 'CO2')
+izkliedes_grafiks(datne4, 'price', 'make')
 # izkliedes_grafiks(datne2, 'price', 'make')
+
