@@ -32,6 +32,8 @@ def info(datne):
 
 datne1 = 'dati/auto_simple.csv'
 datne2 = 'dati/auto_imports.csv'
+datne3 = 'dati/ss_auto.csv'
+
 
 # parādām informāciju par datnē esošajiem datiem
-info(datne2)
+info(datne3)
