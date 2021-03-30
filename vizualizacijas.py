@@ -5,7 +5,7 @@ import seaborn as sb # vizualizācija
 
 # vizualizaciju pamata konfigurācija
 sb.set_style('whitegrid') # plot style
-plt.rcParams['figure.figsize'] = (5, 5) # plot size
+plt.rcParams['figure.figsize'] = (15, 10) # plot size
 
 
 # Karstuma karte (korelācija)
